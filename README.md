@@ -8,7 +8,7 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 !["Desktop Screenshot"](https://raw.githubusercontent.com/DevAchievem/tweeter/master/public/images/desktopScreenshot.png)
 
-![""](https://raw.githubusercontent.com/DevAchievem/tweeter/master/public/images/mobile-screenshot.png)
+!["Mobile Screenshot"](https://raw.githubusercontent.com/DevAchievem/tweeter/master/public/images/mobileScreenshot.png)
 
 ## Getting Started
 
