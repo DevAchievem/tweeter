@@ -101,18 +101,22 @@ nav span {
 }
 
 .background-image {
+  display: flex;
   height: 400px;
   width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
   background-color: #4056A1;
 }
 
 header img {
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
-header div h2 {
-  margin: 0 auto;
+header h2 {
+  margin: 0;
 }
 
 .button-count {
