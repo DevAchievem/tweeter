@@ -29,6 +29,9 @@
 		},
 		{
 			"path": "../../../../../Desktop/Weather"
+		},
+		{
+			"path": "../../../../w4-test"
 		}
 	],
 	"settings": {}

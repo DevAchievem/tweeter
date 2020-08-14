@@ -23,47 +23,13 @@ $(() => {
     return div.innerHTML;
   };
 
-  const timeSince = (date) => {
-
-    const seconds = Math.floor((new Date() - date) / 1000);
-  
-    let interval = seconds / 31536000;
-  
-    if (interval > 1) {
-      return Math.floor(interval) + " years";
-    }
-    interval = seconds / 2592000;
-    if (interval > 1) {
-      return Math.floor(interval) + " months";
-    }
-    interval = seconds / 86400;
-    if (interval > 1) {
-      return Math.floor(interval) + " days";
-    }
-    interval = seconds / 3600;
-    if (interval > 1) {
-      return Math.floor(interval) + " hours";
-    }
-    interval = seconds / 60;
-    if (interval > 1) {
-      return Math.floor(interval) + " minutes";
-    }
-    return Math.floor(seconds) + " seconds";
-  };
-  
-  let aDay = 24 * 60 * 60 * 1000;
-  console.log(timeSince(new Date(Date.now() - aDay)));
-  console.log(timeSince(new Date(Date.now() - aDay * 2)));
-
   const createTweetElement = (search) => {
     const safeHTML = escape(search.content.text);
     const userName = search.user.name;
     const userPic = search.user.avatars;
 
-    const dateNow = moment();
-    const timeElapsed = timeSince(dateNow);
-    // console.log("date: ", dateNow);
-    console.log("timeelapsed: ", timeElapsed);
+    const timeCreated = search.created_at;
+    const timeElapsed = moment(timeCreated).toNow(true);
     const $tweet = `<article class="user-tweets">
 		<header class="name-of-tweeter">
 			<div class="face-and-name">
@@ -90,20 +56,23 @@ $(() => {
   };
   
 
-  // BUTTON SLIDES:
+  // BUTTON SLIDERS:
   $(window).scroll(function() {
     const scroll = $(window).scrollTop();
     if (scroll >= 1) {
       $('.call-to-action').slideUp(500);
       $('.back-to-top').slideDown(500);
-      $('.tweeter').slideUp(500);
       $('.fa-earlybirds').fadeIn(1500);
-
+      if (window.innerWidth > 768) {
+        $('nav').css('background-color', '#4056A1');
+      }
     } else {
       $('.call-to-action').slideDown(500);
       $('.back-to-top').slideUp(0);
-      $('.tweeter').fadeIn(500);
       $('.fa-earlybirds').css('display', 'none');
+      if (window.innerWidth < 768) {
+        $('nav').css('background-color', 'transparent');
+      }
     }
 
   });
@@ -149,7 +118,6 @@ $(() => {
       $.post('/tweets', serialized)
         .then((tweet) => {
           createTweetElement(tweet);
-          // $('#timeAgo').append(`<small>${timeElapsed}</small`);
         });
       loadTweets();
     }
