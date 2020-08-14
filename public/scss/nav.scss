@@ -1,0 +1,75 @@
+
+nav {
+  display: flex;
+  flex: 1;
+  background-color: transparent;
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+}
+
+nav .tweeter {
+  font-family: 'Bungee', cursive;
+  font-size: 1.5em;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  margin-left: .2em;
+}
+
+.fab .fa-earlybirds {
+  display: none;
+}
+
+nav .call-to-action {
+@extend %flex-col-cntr-shared;
+  align-items: center;
+  margin-right: 1.5em;
+  text-decoration: none;
+}
+
+  
+nav span {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $secondary;
+  margin-bottom: .7em;
+  display: none;
+}
+
+
+.empty-space {
+  display: none;
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 768px) {
+  nav {
+    background-color: $secondary;
+  }
+
+
+  nav span {
+    color: white;
+    display: block;
+  }
+
+  nav .tweeter {
+    color: white;
+    font-size: 2em;
+    margin: 1em;
+  }
+
+  nav .call-to-action {
+    margin-right: 3em;
+	}
+	
+	.empty-space {
+    display: block;
+    height: 120px;
+  }
+
+}

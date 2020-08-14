@@ -1,0 +1,79 @@
+
+
+textarea {
+	border-style: none;
+	border-color: transparent;
+	outline: none;
+	resize: none;
+	width: 35em;
+	background-color: $primary;
+	border-bottom: 3px solid black;
+	max-width: 90%;
+}
+
+.button-count {
+	display: flex;
+	justify-content: space-between;
+	width: 35em;
+	margin-top: .5em;
+}
+
+#new-tweet {
+	@extend %flex-col-cntr-shared;
+	align-items: center;
+	display: none;
+}
+
+#new-tweet form {
+	margin-bottom: 2em;
+}
+#new-tweet form div button {
+	font-family: 'Bungee', cursive;
+	color: #FFFFFF;
+	background-color: $secondary;
+}
+
+#new-tweet .counter {
+	font-family: 'Bungee', cursive;
+}
+
+
+ /* Referenceed from w3Schools: https://www.w3schools.com/howto/howto_js_alert.asp */
+
+
+.error {
+	padding-top: 1.2em;
+	background-color: #f44336;
+	color: white;
+}
+
+.closebtn {
+	margin-left: .8em;
+	columns: white;
+	font-weight: bold;
+	float: right;
+	line-height: 1em;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.closebtn:hover {
+	color: black;
+}
+.hidden {
+	display: none;
+	border: 2px solid $caution;
+	color: $caution;
+}
+
+@media only screen and (min-width: 768px) {
+	#tweet-form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#new-tweet {
+		text-align: center;
+	}
+}

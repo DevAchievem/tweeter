@@ -1,0 +1,35 @@
+nav a {
+	cursor: pointer;
+}
+
+nav a i {
+	color: $primary;
+}
+
+
+
+@media (min-width: 768px) {
+	nav a i, .transition {
+		font-size: 27px;
+		background: linear-gradient(to right, white, rgb(114, 72, 102) 50%, white 50%);
+		overflow: hidden;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 200% 110%;
+		background-position: 120%;
+		transition: background-position 275ms ease;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: white;
+	}
+	nav a i:hover {
+		opacity: 0.5;
+		background-position: 0 110%;
+	}
+	
+	.transition:hover {
+		opacity: 0.5;
+		background-position: 0 110%;    
+	}
+}

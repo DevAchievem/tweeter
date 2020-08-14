@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "../../../../w2"
+		},
+		{
+			"path": "../../../../w1"
+		},
+		{
+			"path": "../../../../w2-test"
+		},
+		{
+			"path": "../../../../w3"
+		},
+		{
+			"path": "../../../../w3-test"
+		},
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../../Desktop/LHL Flexbox"
+		},
+		{
+			"path": "../../../../../Desktop/Yogi Mathius"
+		},
+		{
+			"path": "../../../../../Desktop/LHL CV"
+		},
+		{
+			"path": "../../../../../Desktop/Weather"
+		}
+	],
+	"settings": {}
+}

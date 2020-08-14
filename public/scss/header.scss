@@ -1,0 +1,59 @@
+.contain {
+  object-fit: contain;
+  padding-top: 30px;
+}
+.background-image{
+  height: 400px;
+  width: 100%;
+
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+  background-color: $secondary;
+}
+
+header img {
+  margin-top: 60px;
+}
+
+header div h2 {
+  margin: 0 auto;
+}
+
+.button-count {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.profile-left {
+  float: left;
+  width: 44%;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-right {
+  position: relative;
+  top: 38%;
+  left: 8%;
+}
+.container {
+  max-width: 90%;
+  background-color: $primary;
+  @extend %flex-col-cntr-shared;
+  width: 39em;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .background-image {
+    float: left;
+    width: 33.3%;
+  }
+
+  .container {
+    float: right;
+    width: 66.7%;
+	}
+}

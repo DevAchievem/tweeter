@@ -1,29 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/fb7b9df17a.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+    rel="stylesheet">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/scss/style.css" type="text/css" />
+  <!-- External JS -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- App JS -->
+  <script defer type="text/javascript" src="/scripts/client.js"></script>
+  <!--Character Counter JS-->
+  <script defer type="text/javascript" src="./scripts/composer-char-counter.js"></script>
+  <!--Sticky Navbar-->
+  <script defer src="./scripts/sticky-navbar.js"></script>
+  <!--TimeAgo JQuery-->
+  <!-- <script defer src="jquery.timeago.js" type="text/javascript"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
-
-  <body>
-    <!-- Top nav bar (fixed) -->
+<body>
+  <!-- Top nav bar (fixed) -->
+  <div id="container">
     <nav>
-      <span>tweeter</span>
-    </nav>
+      <span class="tweeter">tweeter</span>
+      <!-- <i class="fab fa-earlybirds"></i> -->
+      <a href="#compose" class="call-to-action">
+        <!-- <div class="call-to-action"> -->
+        <span><b>Write</b> a new tweet</span>
+        <i class="fas fa-angle-double-down transition"></i>
+      </a>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
-  </body>
+    </nav>
+  </div>
+  <!-- HEADER -->
+  <div class="empty-space"></div>
+
+  <header class="background-image">
+    <div class="contain">
+      <div class="profile-left">
+        <div class="flex-center">
+          <img src="./images/profile-hex.png" alt="hodor from Game of thrones">
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="profile-right">
+      <h2>Hodor</h2>
+      <span>@HodorHodorrrr</span>
+    </div>
+  </header>
+
+
+  <!-- Page-specific (main) content here -->
+  <a name="compose"></a>
+  <main class="container">
+
+    <section id="new-tweet">
+      <h2>Compose Tweet</h2>
+
+      <form id="tweet-form" method="POST" action="/tweets">
+        <label for="tweet-text"></label>
+        <textarea id="tweet-text" name="text" placeholder="What are you humming about?"></textarea>
+
+        <div class="button-count">
+          <button type="submit" class="submit-tweeet">Tweet</button>
+          <output name="counter" id="tx-counter" class="counter" for="tweet-text"></output>
+        </div>
+
+      </form>
+      <!-- Referenceed from w3Schools: https://www.w3schools.com/howto/howto_js_alert.asp-->
+
+      <!--ERROR TOO LONG-->
+      <div id="errorTextTooLong" class="hidden">
+        <span class="closebtn error">&times;</span>
+        <span>
+          &#9888;Text too long, please
+          adhere to
+          our character length requirements. Kthx Bai.&#9888;
+        </span>
+      </div>
+
+      <!--ERROR NO TEXT-->
+      <div id="errorNoText" class="hidden">
+        <span class="closebtn error">&times;</span>
+        <span>
+          &#9888;Text field cannot be left blank.
+          Please type in your cool swag before hitting TWEET. Kthx Bai.&#9888;
+        </span>
+      </div>
+    </section>
+
+    <!-- FOR USER TWEETS POSTED-->
+    <section id="tweets-container">
+      <!-- <article id="user-tweets"> -->
+      <!-- </article> -->
+    </section>
+  </main>
+
+  <!--ARROW UP BUTTON-->
+  <footer>
+    <a href="#" class="back-to-top">
+      <span class="fa-stack fa-4x">
+        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+        <i class="fas fa-angle-double-up circle icon fa-stack-1x"></i>
+      </span>
+    </a>
+  </footer>
+</body>
+
 </html>

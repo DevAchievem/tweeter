@@ -3,6 +3,18 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+$primary: #f4f1ec;
+$secondary: #4056A1;
+$caution: #ff0033;
+%flex-col-cntr-shared {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@import 'footer', 'nav', 'header', 'user-tweets', 'hover', 'new-tweet';
+
 html {
   box-sizing: border-box;
 }
@@ -16,10 +28,8 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: $primary;
   font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

@@ -1,0 +1,106 @@
+
+#tweets-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background-color: $primary;
+  width: 39em;
+  padding: .4em;
+  max-width: 90%;
+  // margin: ;
+}
+
+article {
+  background-color: $primary;
+  border: 3px solid $secondary;
+  padding: .4em;
+  border-radius: 3px;
+  margin: .5em;
+}
+.user-tweets {
+  filter: blur(1px);
+}
+
+.user-tweets:hover {
+  box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
+  filter: none;
+  .fa-flag, .fa-retweet, .fa-heart {
+    display: inline-block;
+  }
+}
+
+.tweeter-name:hover {
+  display: inline;
+}
+
+
+.name-of-tweeter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1em;
+  padding-top: 1.5em;
+}
+
+.fa-grin-squint-tears {
+  font-size: 2em;
+}
+
+.face-and-name {
+  padding-left: 1em;
+}
+
+.name {
+  padding-left: .5em;
+}
+
+.tweeter-name {
+  padding-right: 2em;
+  display: none;
+  color: rgba(0, 0, 255, .3);
+}
+
+.tweeted-text {
+  padding-left: 1em;
+  padding-bottom: .5em;
+  border-bottom: 3px solid $secondary;
+  max-width: 35em;
+  display: flex;
+}
+
+
+//https://stackoverflow.com/questions/36418352/css-word-wrap-break-word-wont-work/36555643
+.break-long-words {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-footer small {
+  margin-top: .7em;
+  padding-left: 1em;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.fa-flag, .fa-retweet, .fa-heart {
+  padding-right: 1em;
+  display: none;
+}
+
+.icons {
+  font-size: 14px;
+  opacity: 0.7;
+  display: flex;
+  justify-content: flex-end;
+}
