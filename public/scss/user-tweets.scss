@@ -18,15 +18,21 @@ article {
   border-radius: 3px;
   margin: .5em;
 }
-.user-tweets {
+.hover-blur {
   filter: blur(1px);
+}
+
+.user-tweets {
+  min-height: 300px;
 }
 
 .user-tweets:hover {
   box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, .2);
-  filter: none;
   .fa-flag, .fa-retweet, .fa-heart {
     display: inline-block;
+  }
+  .hover-blur {
+    filter: none;
   }
 }
 

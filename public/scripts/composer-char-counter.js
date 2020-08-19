@@ -25,7 +25,7 @@ $(document).ready(function() {
     if (charsLeft > warnLen) {
       $('#tx-counter').html(charsLeft).css(defaultTextColor);
       $('#errorTextTooLong').css('display', 'none');
-    } else if (charsLeft > 0) {
+    } else if (charsLeft >= 0) {
       $('#tx-counter').html(charsLeft).css(warnTextColor);
       $('#errorTextTooLong').css('display', 'none');
     } else {

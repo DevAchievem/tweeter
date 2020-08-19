@@ -32,16 +32,16 @@ $(() => {
     const timeElapsed = moment(timeCreated).toNow(true);
     const $tweet = `<article class="user-tweets">
 		<header class="name-of-tweeter">
-			<div class="face-and-name">
+			<div class="face-and-name hover-blur">
 				<img src='${userPic}'></img>
 				<span class="name">${userName}</span>
 			</div>
 		</header>
 		<main class="max-width">
-		<p class="tweeted-text break-long-words">${safeHTML}</p>
+		<p class="tweeted-text break-long-words hover-blur">${safeHTML}</p>
 		</main>
 		<footer class="tweet-footer">
-			<small id="timeago">${timeElapsed}</small>
+			<small class="hover-blur" id="timeago">${timeElapsed}</small>
 			<ul class="icons">
 				<li class="icon-div"><a href=""><i class="fas fa-flag"></i></a></li>
 				<li class="icon-div"><a href=""><i class="fas fa-retweet"></i></a></li>
@@ -80,7 +80,7 @@ $(() => {
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       const tweeted = createTweetElement(tweet);
-      $tweetsContainer.prepend(tweeted).load('/localhost:8080/');
+      $tweetsContainer.prepend(tweeted);
     }
   };
 
@@ -100,26 +100,28 @@ $(() => {
 
     const text = jQuery('textarea#tweet-text').val();
     const serialized = $form.serialize();
-    $($tweetsContainer).empty();
+    // $($tweetsContainer).empty();
     if (text.length === 0) {
-      $('#errorNoText').css('display', 'inline');
-      $('button[type=submit]').prop('disabled', true);
+      $('#errorNoText').slideDown(500);
+      // $('button[type=submit]').prop('disabled', true);
       $('.closebtn').click(function() {
-        $('#errorNoText').css('display', 'none');
+        $('#errorNoText').slideUp(500);
       });
-      
-    } else if (text.length >= 140) {
-      $('#errorTextTooLong').css('display', 'inline');
-      $('button[type=submit]').prop('disabled', true);
+        
+    } else if (text.length > 140) {
+      $('#errorTextTooLong').slideDown(500);
+      // $('button[type=submit]').prop('disabled', true);
       $('.closebtn').click(function() {
-        $('#errorTextTooLong').css('display', 'none');
+        $('#errorTextTooLong').slideUp(500);
       });
+
     } else {
       $.post('/tweets', serialized)
-        .then((tweet) => {
-          createTweetElement(tweet);
+        .then(() => {
+          $('#errorTextTooLong').slideUp(500);
+          $('#errorNoText').slideUp(500);
+          loadTweets();
         });
-      loadTweets();
     }
   });
   loadTweets();

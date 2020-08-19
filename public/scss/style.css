@@ -177,16 +177,18 @@ article {
   margin: 0.5em;
 }
 
-.user-tweets {
+.hover-blur {
   filter: blur(1px);
 }
 
 .user-tweets:hover {
   box-shadow: 8px 8px 2px 1px rgba(0, 0, 255, 0.2);
-  filter: none;
 }
 .user-tweets:hover .fa-flag, .user-tweets:hover .fa-retweet, .user-tweets:hover .fa-heart {
   display: inline-block;
+}
+.user-tweets:hover .hover-blur {
+  filter: none;
 }
 
 .tweeter-name:hover {

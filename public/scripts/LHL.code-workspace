@@ -1,37 +1,35 @@
 {
 	"folders": [
 		{
-			"path": "../../../../w2"
-		},
-		{
+			"name": "w1",
 			"path": "../../../../w1"
 		},
 		{
+			"name": "w2",
+			"path": "../../../../w2"
+		},
+		{
+			"name": "w2-test",
 			"path": "../../../../w2-test"
 		},
 		{
+			"name": "w3",
 			"path": "../../../../w3"
 		},
 		{
+			"name": "w3-test",
 			"path": "../../../../w3-test"
 		},
 		{
+			"name": "w4",
 			"path": "../../.."
 		},
 		{
-			"path": "../../../../../Desktop/LHL Flexbox"
-		},
-		{
-			"path": "../../../../../Desktop/Yogi Mathius"
-		},
-		{
-			"path": "../../../../../Desktop/LHL CV"
-		},
-		{
-			"path": "../../../../../Desktop/Weather"
-		},
-		{
+			"name": "w4-test",
 			"path": "../../../../w4-test"
+		},
+		{
+			"path": "../../../../w5"
 		}
 	],
 	"settings": {}
