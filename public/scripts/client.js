@@ -78,15 +78,23 @@ $(() => {
   });
   
   const renderTweets = function(tweets) {
-    for (const tweet of tweets) {
-      const tweeted = createTweetElement(tweet);
-      $tweetsContainer.prepend(tweeted);
-    }
+    let tweetsContainer = $('#tweets-container').html('');
+    tweets.forEach(function(tweet) {
+      let tweetElement = createTweetElement(tweet);
+      tweetsContainer.prepend(tweetElement);
+    });
+    // for (const tweet of tweets) {
+    //   const tweeted = createTweetElement(tweet);
+    //   $tweetsContainer.prepend(tweeted);
+    // }
   };
 
   const loadTweets = function() {
     $.getJSON('/tweets', function(data) {
+      $('.tweets').empty();
+      $('textarea').val('');
       renderTweets(data);
+
     });
   };
 

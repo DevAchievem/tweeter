@@ -30,6 +30,18 @@
 		},
 		{
 			"path": "../../../../w5"
+		},
+		{
+			"path": "../../../../w5-test"
+		},
+		{
+			"path": "../../../../header"
+		},
+		{
+			"path": "../../../../../Desktop/Yogi Mathius"
+		},
+		{
+			"path": "../../../../foodOrderApp"
 		}
 	],
 	"settings": {}
